@@ -1,1 +1,46 @@
 
+Web.config
+
+Why it matters
+
+Application configuration, connection strings, authentication, settings
+
+Global.asax.cs
+
+Startup.cs
+
+Application startup/lifecycle
+
+Application initialization/ configuration
+
+Default.aspx/.cs
+
+AppMaster.master /.cs
+
+Entry point/home page
+
+Common layout/master page used across pages
+
+Main Service management UI
+
+WebPages/Servizi/ Servizi.aspx
+
+WebPages/Servizi/ Servizi.aspx.cs
+
+Code/ManageService.cs
+
+Code/dsServiceData.xsd
+
+Code/ dsServiceData.Designer.cs
+
+Logic for creating/updating/ viewing services
+
+Central service-management logic
+
+★ Defines the typed
+
+DataSet and database
+
+mappings
+
+Generated TableAdapters/ data-access code
