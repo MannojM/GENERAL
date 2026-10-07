@@ -155,4 +155,40 @@ XSD ZJ400010DATA.xsd
 
 m pom.xml
 
+
+
+zj40001
+
+input
+
+DataAppl
+
+ObjectFactory
+
+package-info.java
+
+output
+
+DataAppl
+
+ObjectFactory
+
+package-info.java
+
+soapservice
+
+ObjectFactory
+
+package-info.java
+
+ZJ40001Request
+
+ZJ40001Response
+
+wsdl
+
+ZJ40001WSDL
+
+ZJ40001WSDL_Service
+
 .gitattributes
