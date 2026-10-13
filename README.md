@@ -244,3 +244,73 @@ General Constants
 > test
 
 M pom.xml
+
+
+
+
+bnissocore
+
+bnisso-core
+
+main
+
+java
+
+it.bnl
+
+jfweb.loginsso
+
+BNLJFWebLogFormatter
+
+logi
+
+ErrorEncode
+
+HeaderField
+
+JFWebLoginLogger
+
+
+
+JFWebLogin Module
+
+
+
+JFWebPrincipal
+
+
+Versioninfo
+
+
+
+logging
+
+BNLLogFormatter
+
+
+BNLLogger
+
+BNLLogUtil
+
+$50
+
+resources
+
+>test
+
+M pom.xml
+
+>bnisso-core.build
+
+
+>bnisso-core-dist
+
+
+@gitignore
+
+
+
+.gitlab-ci.yml
+
+
+M4 README.md
