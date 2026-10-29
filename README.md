@@ -314,3 +314,18 @@ M pom.xml
 
 
 M4 README.md
+
+
+
+Hi Daniele,
+
+During the investigation, we identified the following findings:
+
+1. URL mismatch: The URL provided in the request is "https://qa-sminternetcorp-biz-secure.echonet", whereas the corresponding staging host alias is "ga-sminternetcorp-biz-secure.staging.echonet". The staging hostname in the request appears to be incorrect, as the "staging" keyword is missing and the hostname differs.
+
+2. No matching logs found: We searched the available logs for the requested date and time range. However, no matching logs were found for the specified URL. We also checked the logs available for the past month (attached for reference), but the URL provided in the request was not found.
+
+Could you please verify the correct URL/environment and confirm whether we should proceed with the staging URL?
+
+Regards,
+Mannoj
