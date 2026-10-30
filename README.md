@@ -329,3 +329,5 @@ Could you please verify the correct URL/environment and confirm whether we shoul
 
 Regards,
 Mannoj
+
+bnpp.env: "qual" and Tipo: "INTRANET" and log.file.path:*/apps/web/SM_Intranet/Service ManagerFE/logs/0*_proxy.log and RSMHostAlias: "smrisparmiofinalizzato.bnl.echonet" and targetUrl: *
