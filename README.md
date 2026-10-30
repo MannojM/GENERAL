@@ -331,3 +331,27 @@ Regards,
 Mannoj
 
 bnpp.env: "qual" and Tipo: "INTRANET" and log.file.path:*/apps/web/SM_Intranet/Service ManagerFE/logs/0*_proxy.log and RSMHostAlias: "smrisparmiofinalizzato.bnl.echonet" and targetUrl: *
+
+
+Hi Daniele,
+
+I investigated the existing INTERNET configurations and the possibility of exposing the Flow Estrazione PIN service through SM INTRANET.
+
+INTERNET configuration
+
+Both Qualification ("smflowestrazionepincoll.bnl.echonet") and Production ("smflowestrazionepin.bnl.echonet") aliases are configured with the RD connection, using HTTP to "tibco.isle02:3083".
+
+INTRANET investigation
+
+- The requested aliases are not present in the Qualification or Production INTRANET configuration repositories.
+- In Production INTRANET, I found two existing aliases ("smmobiletoken.bnl.echonet" and "smgptoolmobiletoken.bnl.echonet") configured to route to "10.238.60.64:3083".
+- Kibana logs show requests from these aliases to the Flow Estrazione PIN endpoints on the same IP and port. The matching records show HTTP 408 responses, so successful processing is not confirmed.
+- No matching traffic to this IP was found in the Qualification INTRANET logs for the selected one-year period.
+
+I have attached the relevant Production INTRANET configuration and Kibana findings for reference.
+
+Could you please confirm whether "10.238.60.64" is the intended INTRANET backend IP for Flow Estrazione PIN, or provide the correct IP if different?
+
+Based on the existing Production INTRANET configuration and logs, the two aliases mentioned above could be considered as references when evaluating the reuse of an existing RSMHostAlias.
+
+Thanks.
