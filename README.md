@@ -355,3 +355,72 @@ Could you please confirm whether "10.238.60.64" is the intended INTRANET backend
 Based on the existing Production INTRANET configuration and logs, the two aliases mentioned above could be considered as references when evaluating the reuse of an existing RSMHostAlias.
 
 Thanks.
+
+
+
+1. Incident Overview
+
+Service Reported: PZ02060
+
+Error Message:
+"DispatcherECI2.execute(): CTG code (61441) ECI code (0) ECI msg (ECI_NO_ERROR) (MDNBRVJEQks=)"
+
+Application Context:
+
+- Application: "tibco.digitbank"
+- Node: 59
+- Domain: 12
+- Channel: 9
+
+Note: The requester did not specify the affected environment (Qualification or Production).
+
+2. Investigation Steps Taken
+
+Multi-Environment Log Analysis (Kibana)
+
+Since the environment was not specified, initial searches were performed across the available Qualification and Production application logs.
+
+Service Search:
+
+- Searched for service identifier "PZ02060" in the Service Manager application logs.
+- The matching entries were predominantly standard INFO-level Dispatcher and ZipFilter logs.
+- No corresponding PZ02060-specific "DispatcherECI2" error or CTG failure was identified in the logs examined.
+
+Error Code Search:
+
+- Searched for the reported CTG return code "61441".
+- Matching CTG errors were identified for other services, but no direct correlation with PZ02060 was established.
+
+Configuration and Repository Analysis:
+
+- Searched the available application codebase and configuration repositories for "PZ02060".
+- No direct matching service configuration was identified.
+- Identified Digitbank-related configuration under "tibcoDigitbankAS.xml", including a shared NBA host SequenceProcessor configuration.
+- Further investigation is required to establish the actual backend mapping for the reported request.
+
+3. Preliminary Findings
+
+The available logs confirm that PZ02060 requests are reaching the Service Manager Dispatcher. One of the observed Dispatcher entries records the following CICS destination:
+
+"cics://mvstn2:2006/CICSBNL"
+
+However, the reported CTG error (61441) could not be correlated with the PZ02060 application logs examined.
+
+Although similar CTG errors were observed for other services, there is currently insufficient evidence to establish that the reported PZ02060 issue has the same root cause.
+
+The absence of a direct PZ02060 match in the searched XML configuration files also does not conclusively establish that the reported service identifier is incorrect.
+
+4. Proposed Next Steps
+
+Clarification:
+
+- Confirm whether the issue occurred in Qualification or Production.
+- Confirm that "PZ02060" is the correct technical Service Manager service identifier associated with the "tibco.digitbank" application.
+
+Further Investigation:
+
+- Verify the availability and connectivity of the configured CICS destination ("mvstn2:2006/CICSBNL").
+- Check CTG connectivity and the availability of the corresponding backend transaction.
+- If an approximate failure timestamp is available, correlate the request using the application context (node 59, domain 12, channel 9) and the supplied error identifier.
+
+These checks will help narrow down whether the issue originates from Service Manager dispatching, CTG connectivity, or the CICS backend.
