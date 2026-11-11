@@ -424,3 +424,8 @@ Further Investigation:
 - If an approximate failure timestamp is available, correlate the request using the application context (node 59, domain 12, channel 9) and the supplied error identifier.
 
 These checks will help narrow down whether the issue originates from Service Manager dispatching, CTG connectivity, or the CICS backend.
+
+
+bnpp.env: "qual" and Tipo: "INTERNET" and log.file.path:
+
+*/apps/web/SM_Internet/ServiceManagerFE/logs/0*_servicemanager.log and module: "tibco.digitbank" and code: "PZ02060" and message_text: "*DispatcherECI2.execute()*"
